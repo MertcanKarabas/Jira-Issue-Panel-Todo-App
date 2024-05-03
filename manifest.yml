@@ -1,0 +1,24 @@
+modules:
+  jira:issuePanel:
+    - key: to-do-issue-panel
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: To-Do
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+    tunnel:
+      port: 3000
+app:
+  id: ari:cloud:ecosystem::app/197538b7-20ab-4058-8e3b-302beaadc607
+  runtime:
+    name: nodejs18.x
+permissions:
+  scopes:
+    - storage:app
